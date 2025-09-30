@@ -37,11 +37,11 @@ class World():
                            img = pygame.transform.scale(dirt_img, (tile_size, tile_size))
                            img_rect = img.get_rect()
                            img_rect.x = col_count * tile_size 
-                           img_rect.x = row_count * tile_size 
+                           img_rect.y = row_count * tile_size 
                            tile = (img, img_rect)
                            self.tile_list.append(tile)
                      col_count += 1
-                     row_count +=1
+               row_count +=1  
       def draw(self):
             for tile in self.tile_list:
                 screen.blit(tile[0], tile[1])
