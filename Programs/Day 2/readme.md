@@ -127,3 +127,5 @@ Had a lot of fun going over how to create a player character in pygame!
 Really goes to show that there are so many things to consider while creating a game :D.
 
 See you all tomorrow!
+
+<img width="931" height="966" alt="image" src="https://github.com/user-attachments/assets/258d230e-6185-48c2-bf0c-4c486c78e4cc" />
