@@ -28,14 +28,14 @@ Created a class for player, exactly how we created one for world.
 class Player():
     def __init__(self, x, y):
         img = pygame.image.load('img/guy1.png')
-
+```
 Then, we needed to draw the player onto the screen, which is similar to how we drew the background image [sky.png] and the grass and dirt tiles.
 So we created a function def update()
 and added this to it:
-
+```python
 #draw player onto screen
 		screen.blit(self.image, self.rect)
-
+```
 We then define the scale (how big the player will be):
 player = Player(100, screen_height - 130)
 
@@ -50,8 +50,10 @@ by transforming the character into a rect with following characteristics:
 self.rect = self.image.get_rect()
 self.rect.x = x
 self.rect.y = y
+```
 Now, we want to use the x and y axis to make our player move.
 We do that in our def update(self) function,
+```python
     def update(self):
         dx = 0
 		dy = 0
@@ -61,9 +63,12 @@ We do that in our def update(self) function,
 			dx -= 2.5
 		if key[pygame.K_RIGHT]:
 			dx += 2.5
+```
 Then we update the player's coordinates using:
+```python
 self.rect.x += dx
 self.rect.y += dy    
+```
 What we need is simple, the change in x axis of the player, the change in y axis of the player, this will define how much the player will move left and right based on the key pressed (We create a variable to get the key pressed by the user and then We use pygame's inbuilt function [pygame.K_LEFT], [pygame.K_RIGHT] in order to use the input in our program)
 
 ### 🦘 Implementing Jump Mechanics
@@ -80,14 +85,17 @@ self.vel_y = 0
 self.jumped = False
 
 Then, we check if space key pressed and define our jump based on that
+```python
 if key[pygame.K_SPACE] and self.jumped == False:
 			self.jumped = True
 			self.vel_y = -7.5
-
+```
 
 We then add:
+```python
 if key[pygame.K_SPACE] == False:
 	self.jumped = False
+```
 This is used in order to ensure that the self.jumped is false so we do not fly away to the top of nowhere.
 
 ### 🌍 Adding Gravity & Collision
@@ -100,16 +108,18 @@ self.vel_y += 0.25
 if self.vel_y > 10:
     self.vel_y = 10
 dy += self.vel_y
+```
 Yeah that's basically it, here we are first of all:
  creating a cap on the amount of velocity that the player can generate. 
  Then we are reducing the y coordinates of the player respectively by changing "dy"
 
 
 Also for the time being we prevent the player from falling below the screen by:
+```python
 if self.rect.bottom > screen_height:
 			self.rect.bottom = screen_height
 			dy = 0
-
+```
 this basically ensures that the bottom of our defined player character cannot be below the height of the screen, if it is, we need to make it atleast equal to the height of the bottom of the screen and make change in y = 0.
 
 That's it for day 2,
