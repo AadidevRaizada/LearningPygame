@@ -5,7 +5,7 @@ Hola! I am officially documenting my journey of going through and learning "PyGa
 This Repository will include project links, video resources and a detailed description of whatever I have learned.
 
 Current Progress:
-Day 1
+Day 2
 
 Current Goal:
 Platformer Game -->
